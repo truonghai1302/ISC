@@ -1,0 +1,32 @@
+import java.util.Scanner; //Lấy dữ liệu nhập vô từ người dùng	
+public class Bai1 {
+	public static int a;
+	public static int b;
+	public static void Input()
+	{
+		Scanner input = new Scanner (System.in);
+		System.out.println("Enter value a: ");
+		a = input.nextInt(); //Nhập a
+		System.out.println("Enter value b: ");
+		b = input.nextInt(); //Nhập b
+	}
+	public static int UCLN()
+	{
+		while (a!=b) //Nếu a = b => a là UCLN
+		{
+			if (a>b) a=a-b;
+			else b=b-a;
+		}
+		return (a);
+	}
+	public static int BCNN ()
+	{
+		return ((a*b)/UCLN());
+	}
+	public static void main(String[] args)
+	{
+		System.out.println("UCLN of" +a+ "and" +b+ ": " +UCLN());
+		System.out.println("BCNN of" +a+ "and" +b+ ": " +BCNN());
+		
+	}
+}

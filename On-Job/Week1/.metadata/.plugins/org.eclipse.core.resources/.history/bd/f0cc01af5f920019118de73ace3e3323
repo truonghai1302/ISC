@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Exercise3 {
+	public static int EnterValue(){
+		Scanner input= new Scanner(System.in);
+		boolean check= false;
+		int n=0;
+		while(!check){
+			System.out.print(" ");
+			try{
+				n= input.nextInt();
+				check= true;
+			}catch(Exception e){
+				input.nextLine();
+			}
+		}
+		return (n);
+	}
+    public static int SumDigits(int a){
+    	int sum=0; //Giá trị tổng
+    	while (a>0)
+    	{
+    		sum+=a%10; //Chia 10 lấy phần dư
+    		a= a/10;	//Chia 10 lấy phần dư
+    	}
+    	return sum;
+    	
+    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Enter Value: ");
+		int x = EnterValue();
+		System.out.println ("Sum is: "+SumDigits(x));
+	}
+
+}

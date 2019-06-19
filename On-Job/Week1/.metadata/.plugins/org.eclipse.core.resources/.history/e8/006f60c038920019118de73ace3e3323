@@ -1,0 +1,7 @@
+import java.util.Scanner;
+public class Input {
+	Scanner Input = new Scanner(System.in);
+	int n=0;
+	System.out.print("")
+
+}
