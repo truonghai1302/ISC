@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Exercise5 {
+	public static int EnterValue(){
+		Scanner input= new Scanner(System.in);
+		boolean check= false;
+		int n=0;
+		while(check==false){
+			System.out.print(" ");
+			try{
+				n= input.nextInt();
+				if (n>=0) {
+				check= true;
+				}
+				else {
+					System.out.println("Please enter correct Integer");
+				}
+			}catch(Exception e){
+				input.nextLine();
+			}
+		}
+		return (n);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

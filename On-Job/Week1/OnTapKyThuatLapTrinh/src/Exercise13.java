@@ -1,0 +1,74 @@
+
+/*13.Nhập số liệu cho 2 dãy số thực  a0 , a1 ,..., am-1   và  b0 , b1 ,..., bn-1. 
+Giả sử cả 2 dãy này đã được sắp theo thứ tự tăng dần. 
+Hãy tận dụng tính sắp xếp của 2 dãy và tạo dãy c0 , c1 ,..., cm+n-1  là hợp của 2 dãy trên, 
+sao cho dãy  ci  cũng có thứ tự tăng dần . */
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Exercise13 {
+	 public static void inArray(int[] a, int begin , int end){
+			System.out.println();
+			int i;
+			for(i=begin ; i<end ; i++){
+				System.out.print(" "+a[i]);
+			}
+			System.out.println();
+		}
+	    public static void themPhanTu(int[] a,int n,int pt){
+			a[0]= pt;
+			Arrays.sort(a);
+		}
+	    public static int EnterValue(){
+			Scanner input= new Scanner(System.in);
+			boolean check= false;
+			int n=0;
+			while(check==false){
+				System.out.print(" ");
+				try{
+					n= input.nextInt();
+					if (n>0) {
+					check= true;
+					}
+					else {
+						System.out.println("Please enter correct number (0)");
+						System.out.print("Enter value: ");
+					}
+				}catch(Exception e){
+					input.nextLine();
+				}
+			}
+			return (n);
+		}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 System.out.println("EnterValue n");
+			int n= EnterValue();
+			System.out.println("EnterValue m");
+			int m= EnterValue();
+			int i;
+			int[] a= new int[n+m];
+			int[] b= new int[m];
+			//EnterValue vao Array A va sap xep theo thu tu tang dan
+			System.out.println("EnterValue Array A: ");
+			for(i=0 ; i<n ; i++){
+				System.out.print("\n EnterValue Element "+i+" = ");
+				a[i]= EnterValue();
+			}
+			Arrays.sort(a);
+			//EnterValue vao Array B va sap xep theo thu tu tang dan
+			System.out.println("EnterValue Array B: ");
+			for(i=0 ; i<m ; i++){
+				System.out.print("\n EnterValue Element "+i+" = ");
+				b[i]= EnterValue();
+			}
+			Arrays.sort(b);
+			//Gop Array b vao Array a
+			for(i=0 ; i<m ; i++){
+				themPhanTu(a, n+m+1, b[i]);
+			}
+			inArray(a, 0, n+m);
+	}
+
+}

@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class Exercise5 {
+	public static int EnterValue(){
+		Scanner input= new Scanner(System.in);
+		boolean check= false;
+		int n=0;
+		while(check==false){
+			System.out.print(" ");
+			try{
+				n= input.nextInt();
+				if (n>=0) {
+				check= true;
+				}
+				else {
+					System.out.println("Please enter correct Integer");
+				}
+			}catch(Exception e){
+				input.nextLine();
+			}
+		}
+		return (n);
+	}
+	public static boolean isPrime(int x) { //Kiểm tra thừa số nguyên tố
+		int i;
+		int m= (int) Math.sqrt(x);
+		for (i=2;i<=m;i++)
+		{
+			if (m%i==0)
+				return false;
+		}
+		return true;
+	}
+	public static void list(int n) {
+		if (n<3) {
+			System.out.println("Khong co so nguyen to nho hon "+n);
+		}
+		else {
+			for (int i=2; i<n;i++) {
+				System.out.println(" "+n);
+			}
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Enter value of n: ");
+		int n= EnterValue();
+		list(n);
+	}
+
+}

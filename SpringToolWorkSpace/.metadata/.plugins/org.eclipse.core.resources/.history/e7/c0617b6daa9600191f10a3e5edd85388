@@ -1,0 +1,58 @@
+
+public class Exercise17 {
+	public static int nhap(){
+		Scanner input= new Scanner(System.in);
+		boolean check= false;
+		int n=0;
+		while(!check){
+			System.out.print(" ");
+			try{
+				n= input.nextInt();
+				check= true;
+			}catch(Exception e){
+				System.out.println("Ban phai nhap so! hay nhap lai...");
+				input.nextLine();
+			}
+		}
+		return (n);
+	}
+    public static float nhapFloat(){
+		Scanner input= new Scanner(System.in);
+		boolean check= false;
+		float n=0;
+		while(!check){
+			System.out.print(" ");
+			try{
+				n= input.nextInt();
+				check= true;
+			}catch(Exception e){
+				System.out.println("Ban phai nhap so! hay nhap lai...");
+				input.nextLine();
+			}
+		}
+		return (n);
+	}
+    public static int viTriMinFloat(float a[], int n){
+		float min= a[0];
+		int key= 0;
+		for(int j=0 ; j<n ; j++){
+			if(min>a[j]){
+				min= a[j];
+				key= j;
+			}
+		}
+		return (key);
+	}
+  public static float maxFloat(float a[], int n){
+		float max= a[0];
+		for(int j=0 ; j<n ; j++){
+			if(max<a[j]) max= a[j];
+		}
+		return (max);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

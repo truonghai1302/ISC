@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Exercise7 {
+	public static int EnterValue(){
+		Scanner input= new Scanner(System.in);
+		boolean check= false;
+		int n=0;
+		while(check==false){
+			System.out.print(" ");
+			try{
+				n= input.nextInt();
+				if (n>0) {
+				check= true;
+				}
+				else {
+					System.out.println("Please enter correct number (>0)");
+					System.out.print("Enter value: ");
+				}
+			}catch(Exception e){
+				input.nextLine();
+			}
+		}
+		return (n);
+	}
+
+}

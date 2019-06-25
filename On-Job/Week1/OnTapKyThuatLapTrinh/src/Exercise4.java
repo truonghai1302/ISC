@@ -13,7 +13,8 @@ public class Exercise4 {
 				check= true;
 				}
 				else {
-					System.out.println("Please enter correct Integer");
+					System.out.println("Please enter correct Integer (>=0)");
+					System.out.print("Enter value: ");
 				}
 			}catch(Exception e){
 				input.nextLine();
@@ -21,12 +22,11 @@ public class Exercise4 {
 		}
 		return (n);
 	}
-	public static boolean isPrime(int x) { //Kiểm tra thừa số nguyên t
-		int i;
+	public static boolean isPrime(int x) { //Kiểm tra thừa số nguyên tố
 		int m= (int) Math.sqrt(x);
-		for (i=2;i<=m;i++)
+		for (int i=2;i<=m;i++)
 		{
-			if (m%i==0)
+			if (x%i==0)
 				return false;
 		}
 		return true;
